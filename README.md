@@ -12,3 +12,7 @@
 ## Alternative
 
 1. Zip and unzip
+
+## Shared Hosting
+
+https://www.iankumu.com/blog/deploy-laravel-on-shared-hosting/
