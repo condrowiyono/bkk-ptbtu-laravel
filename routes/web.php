@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteConfigController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ContactUsPublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +19,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Public Routes */
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::post('/contact', [ContactUsPublicController::class, 'store'])->name('contact-us-public.store');
 
+
+
+/* Protected Routes */
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/site', [SiteConfigController::class, 'index'])->name('site.index');
+Route::get('/home/site/edit', [SiteConfigController::class, 'show'])->name('site.edit');
+Route::post('/home/site/update', [SiteConfigController::class, 'update'])->name('site.update');
+
+Route::resource('/home/activities', ActivityController::class);
+Route::resource('/home/galleries', GalleryController::class);
+Route::resource('/home/contact-us', ContactUsController::class);
+Route::post('/home/reply-contact-us', [ContactUsController::class, 'reply'])->name('contact-us.reply');

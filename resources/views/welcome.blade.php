@@ -42,8 +42,7 @@
                 <a href="/#home"> Beranda </a>
                 <a href="#profile"> Profil </a>
                 <a href="#activities"> Aktivitas </a>
-                <a href="#gallery"> Galeri </a>
-                <a href="https://www.instagram.com/bajatitianutama.official"> Instagram </a>
+                <a href="#gallery-section"> Galeri </a>
                 <a href="#contact" class="text-primary font-bold"> Hubungi Kami </a>
             </nav>
             <nav class="flex md:hidden">
@@ -51,7 +50,7 @@
                     <option value="/#home">Beranda</option>
                     <option value="#profile">Profil</option>
                     <option value="#activities">Aktivitas</option>
-                    <option value="#gallery">Galeri</option>
+                    <option value="#gallery-section">Galeri</option>
                     <option value="#contact">Hubungi Kami</option>
                 </select>
             </nav>
@@ -59,24 +58,27 @@
     </header>
     <section id="home" class="bg-hero-ornament">
         <div class="flex h-full bg-gradient-to-b from-transparent to-white">
-            <div class="container mx-auto flex flex-col-reverse items-center justify-between gap-4 px-12 md:flex-row">
+            <div
+                class="container mx-auto flex flex-col-reverse items-center justify-between gap-4 px-12 md:flex-row min-h-[320px] md:min-h-[640px]">
                 <div class="basis-3/5 space-y-4 text-center md:text-left">
-                    <h1 class="text-3xl font-bold md:text-7xl">Callender Hamilton (CH)</h1>
-                    <h2 class="text-xl md:text-2xl">Proyek KPBU Penggantian atau Duplikasi jembatan Callender Hamilton
-                        (CH) di Pulau Jawa oleh PT Baja Titian Utama</h2>
+                    <h1 class="text-3xl font-bold md:text-7xl">
+                        {{ $site->hero_title ?? 'Callender Hamilton (CH)' }}
+                    </h1>
+                    <h2 class="text-xl md:text-2xl">
+                        {{ $site->hero_subtitle ?? 'Proyek KPBU Penggantian atau Duplikasi jembatan Callender Hamilton (CH) di Pulau Jawa oleh PT Baja Titian Utama' }}
+                    </h2>
                 </div>
                 <div class="my-12 grid w-full basis-2/5 grid-cols-2 gap-2 md:my-32">
                     <div class="relative col-span-2 h-64 w-full">
-                        <img src="/hero/about.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
-                            alt="Jembatan Callender Hamilton" />
-                    </div>
-
-                    <div class="relative hidden h-56 w-full sm:block">
-                        <img src="/hero/about.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
+                        <img src="/hero/image1.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
                             alt="Jembatan Callender Hamilton" />
                     </div>
                     <div class="relative hidden h-56 w-full sm:block">
-                        <img src="/hero/about.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
+                        <img src="/hero/image2.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
+                            alt="Jembatan Callender Hamilton" />
+                    </div>
+                    <div class="relative hidden h-56 w-full sm:block">
+                        <img src="/hero/image3.webp" class="rounded-lg object-cover shadow-sm w-full h-full"
                             alt="Jembatan Callender Hamilton" />
                     </div>
                 </div>
@@ -92,19 +94,11 @@
             <div
                 class="right-32 w-full space-y-4 rounded-xl bg-white bg-white bg-card-linear p-8 shadow-sm md:absolute md:top-1/2 md:w-[600px] md:-translate-y-1/2 md:transform">
                 <h1 class="text-center text-3xl font-bold text-primary md:text-5xl">
-                    Profil
+                    {{ $site->about_title ?? 'Profil' }}
                 </h1>
                 <p class="leading-loose">
-                    <strong class="font-bold text-primary"> PT Baja Titian Utama </strong>
-                    <strong> </strong>
-                    adalah perusahaan yang resmi berdiri pada tanggal 18 November 2021, yang
-                    memegang konsesi Proyek Penggantian dan/atau Duplikasi Jembatan Callender
-                    Hamilton di Pulau Jawa. Dengan total konsesi selama 12 tahun yang terdiri
-                    dari 2 tahun masa konstruksi dan 10 tahun masa layanan. Dengan lingkup
-                    pekerjaan meliputi penggantian dan/atau duplikasi di 37 lokasi jembatan
-                    CH eksisting dengan Jembatan Steel Box Girder, Steel I Girder, beserta
-                    bangunan pelengkap (termasuk Structural Health Monitoring System/ SHMS),
-                    serta 0&M selama Masa Layanan.
+                    {!! $site->about_description ??
+                        'PT Baja Titian Utama, didirikan 2018 sebagai bagian dari PT Bukaka Teknik Utama. Berkolaborasi dengan pemerintah untuk membangun jembatan di Indonesia. Dengan konsesi selama 12 tahun, ratusan jembatan telah dibangun.' !!}
                 </p>
             </div>
         </div>
@@ -112,24 +106,17 @@
     <section id="activities" class="bg-dot-ornament bg-gray-100">
         <div class="container mx-auto flex flex-col-reverse items-center gap-8 py-16 md:flex-row">
             <div class="relative grow basis-1/2 space-y-2">
-                <div class="rounded-xl border bg-white p-8 shadow-sm sm:w-full md:w-2/3 md:left-1/2 md:translate-x-1/2">
-                    <span class="break-words text-5xl font-bold text-primary md:text-left md:text-7xl"> 12 th </span>
-                    <div class="border-l-4 border-primary pl-2"> Masa Konsesi </div>
-                </div>
-                <div class="rounded-xl border bg-white p-8 shadow-sm sm:w-full md:w-2/3">
-                    <span class="break-words text-5xl font-bold text-primary md:text-left md:text-7xl"> 37 </span>
-                    <div class="border-l-4 border-primary pl-2"> Jembatan </div>
-                </div>
-                <div
-                    class="rounded-xl border bg-white p-8 shadow-sm sm:w-full md:w-2/3 md:left-1/2 md:translate-x-1/2">
-                    <span class="break-words text-5xl font-bold text-primary md:text-left md:text-7xl"> DBFOM </span>
-                    <div class="border-l-4 border-primary pl-2"> Design, Build, Finance, Operate, Maintain, Transfer
+                @foreach ($activities as $index => $activity)
+                    <div
+                        class="rounded-xl border bg-white p-8 shadow-sm sm:w-full md:w-2/3 md:left-1/2 {{ $index % 2 == 0 ? 'md:translate-x-1/2' : '' }}">
+                        <span class="break-words text-5xl font-bold text-primary md:text-left md:text-7xl">
+                            {{ $activity->name }}
+                        </span>
+                        <div class="border-l-4 border-primary pl-2">
+                            {{ $activity->description }}
+                        </div>
                     </div>
-                </div>
-                <div class="rounded-xl border bg-white p-8 shadow-sm sm:w-full md:w-2/3">
-                    <span class="break-words text-5xl font-bold text-primary md:text-left md:text-7xl"> AP </span>
-                    <div class="border-l-4 border-primary pl-2"> (Availability Payment) </div>
-                </div>
+                @endforeach
             </div>
             <div class="basis-1/2">
                 <div>
@@ -141,45 +128,20 @@
             </div>
         </div>
     </section>
-    <section id="gallery">
+    <section id="gallery-section">
         <div class="container mx-auto space-y-8 p-32">
             <h1 class="text-center text-5xl font-bold text-primary">Galeri</h1>
 
             <div id="gallery" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item="active">
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
-                        <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                            class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="">
-                    </div>
+                    @foreach ($galleries as $gallery)
+                        <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
+                            <img src="{{ asset('storage/' . $gallery->path) }}"
+                                class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover w-full h-full"
+                                alt="{{ $gallery->name }}">
+                        </div>
+                    @endforeach
                 </div>
-                <!-- Slider controls -->
                 <button type="button"
                     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                     data-carousel-prev>
@@ -214,9 +176,9 @@
         <div class="container mx-auto py-16 text-white">
             <h1 class="text-3xl font-bold">Hubungi Kami Sekarang</h1>
             <address>
-                <a class="text-lg font-bold" href="https://www.instagram.com/bajatitianutama.official"
-                    target="_blank" rel="noreferrer">
-                    IG: bajatitianutama.official
+                <a class="text-lg font-bold" href={{ $site->social_instagram_link }} target="_blank"
+                    rel="noreferrer">
+                    {{ $site->social_instagram ?? 'bajatitianutama.official' }}
                 </a>
             </address>
         </div>
@@ -227,27 +189,33 @@
             <p class="text-center text-xl text-gray-600">
                 Apabila Anda memiliki pertanyaan, kami siap untuk membantu Anda
             </p>
-            <form>
+            <form action="{{ route('contact-us-public.store') }}" method="POST" class="space-y-8">
+                @csrf
                 <div class="grid grid-cols-1 gap-8 mt-8 mb-2 md:grid-cols-2">
                     <div class="col-span-2 md:col-span-1">
                         <label for="name">Nama</label>
-                        <input id="name" type="text" required
+                        <input id="name" type="text" required name="name"
                             class="w-full p-2 border border-gray-300 rounded-md" />
                     </div>
                     <div class="col-span-2 md:col-span-1">
                         <label for="email">Email</label>
-                        <input id="email" type="email" required
+                        <input id="email" type="email" required name="email"
                             class="w-full p-2 border border-gray-300 rounded-md" />
                     </div>
                     <div class="col-span-2">
                         <label for="message">Pesan</label>
-                        <textarea id="message" required class="w-full p-2 border border-gray-300 h-32 rounded-md"></textarea>
+                        <textarea id="message" name="message" required class="w-full p-2 border border-gray-300 h-32 rounded-md"></textarea>
                     </div>
                 </div>
                 <button class="w-full p-2 bg-primary text-white rounded-md" type="submit">
                     Kirim
                 </button>
             </form>
+            @if (session('success'))
+                <div class="mt-8 p-4 bg-green-100 text-green-700 rounded-md">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div>
     </section>
 
@@ -256,35 +224,34 @@
             <div>
                 <h1 class="mb-2 text-lg font-bold">Hubungi Kami</h1>
                 <address class="grid grid-cols-1 gap-2 not-italic">
-                    <a href="https://www.instagram.com/bajatitianutama.official" target="_blank" rel="noreferrer">
+                    <a target="_blank" rel="noreferrer" href={{ $site->social_instagram_link }}>
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                 viewBox="0 0 32 32">
                                 <path fill="currentColor"
                                     d="M11.469 5C7.918 5 5 7.914 5 11.469v9.062C5 24.082 7.914 27 11.469 27h9.062C24.082 27 27 24.086 27 20.531V11.47C27 7.918 24.086 5 20.531 5zm0 2h9.062A4.463 4.463 0 0 1 25 11.469v9.062A4.463 4.463 0 0 1 20.531 25H11.47A4.463 4.463 0 0 1 7 20.531V11.47A4.463 4.463 0 0 1 11.469 7m10.437 2.188a.902.902 0 0 0-.906.906c0 .504.402.906.906.906a.902.902 0 0 0 .907-.906a.902.902 0 0 0-.907-.906M16 10c-3.3 0-6 2.7-6 6s2.7 6 6 6s6-2.7 6-6s-2.7-6-6-6m0 2c2.223 0 4 1.777 4 4s-1.777 4-4 4s-4-1.777-4-4s1.777-4 4-4" />
                             </svg>
-                            bajatitianutama.official
+                            {{ $site->social_instagram ?? 'bajatitianutama.official' }}
                         </div>
                     </a>
-                    <a href="https://twitter.com/BajaTitianUtama" target="_blank" rel="noreferrer">
+                    <a target="_blank" rel="noreferrer" href={{ $site->social_twitter_link }}>
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                 viewBox="0 0 20 20">
                                 <path fill="currentColor"
                                     d="M17.316 6.246c.008.162.011.326.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 0 0 5.588-1.562a3.779 3.779 0 0 1-3.526-2.621a3.858 3.858 0 0 0 1.705-.065a3.779 3.779 0 0 1-3.028-3.703v-.047a3.766 3.766 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.716 10.716 0 0 0 7.781 3.945a3.813 3.813 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.602 7.602 0 0 0 2.397-.916a3.789 3.789 0 0 1-1.66 2.088a7.55 7.55 0 0 0 2.168-.594a7.623 7.623 0 0 1-1.884 1.953" />
                             </svg>
-                            BajaTitianUtama
+                            {{ $site->social_twitter ?? BajaTitianUtama }}
                         </div>
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=100089226504104" target="_blank"
-                        rel="noreferrer">
+                    <a target="_blank" rel="noreferrer" href={{ $site->social_facebook_link }}>
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                 viewBox="0 0 20 20">
                                 <path fill="currentColor"
                                     d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2" />
                             </svg>
-                            Baja Titian Utama
+                            {{ $site->social_facebook ?? 'Baja Titian Utama' }}
                         </div>
                     </a>
                 </address>
@@ -292,9 +259,7 @@
             <div>
                 <h1 class="mb-2 text-lg font-bold">Lokasi Kami</h1>
                 <address class="not-italic">
-                    ITS Tower, Nifarro Park <br />
-                    Jalan Raya Pasar Minggu <br />
-                    Jakarta Selatan
+                    {!! $site->address_full ?? 'ITS Tower, Nifarro Park Jalan Raya Pasar Minggu Jakarta Selatan' !!}
                 </address>
             </div>
         </div>
@@ -305,7 +270,7 @@
             </div>
         </div>
         <div class="pb-8 text-center">
-            <p>&copy; 2021 PT Baja Titian Utama. All rights reserved.</p>
+            <p>&copy; 2021 PT Baja Titian Utama. Hak cipta dilindungi undang-undang.</p>
         </div>
     </footer>
 </body>
