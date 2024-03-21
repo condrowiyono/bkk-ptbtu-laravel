@@ -50,6 +50,7 @@
                                 <div id="about_description">
                                     {!! htmlspecialchars_decode($site->about_description) !!}
                                 </div>
+                                <textarea name="about_description" id="about_description_input" hidden class="hidden">{{ $site->about_description }}</textarea>
                             </td>
                         </tr>
                         <tr class="bg-white border-b">
@@ -58,6 +59,7 @@
                                 <div id="address_full">
                                     {!! htmlspecialchars_decode($site->address_full) !!}
                                 </div>
+                                <textarea name="address_full" id="address_full_input" hidden class="hidden">{{ $site->address_full }}</textarea>
                             </td>
                         </tr>
 

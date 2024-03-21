@@ -23,6 +23,11 @@ $menus = [
         'route' => 'contact-us.index',
         'description' => 'Baca pesan yang masuk dari kontak kami',
     ],
+    [
+        'name' => 'Blog',
+        'route' => 'posts.index',
+        'description' => 'Kelola blog berita, artikel, press release, dan lainnya',
+    ],
 ];
 
 ?>

@@ -42,7 +42,8 @@
                 <a href="/#home"> Beranda </a>
                 <a href="#profile"> Profil </a>
                 <a href="#activities"> Aktivitas </a>
-                <a href="#gallery-section"> Galeri </a>
+                <a href="#gallery"> Galeri </a>
+                <a href="{{ route('blog.index') }}"> Blog </a>
                 <a href="#contact" class="text-primary font-bold"> Hubungi Kami </a>
             </nav>
             <nav class="flex md:hidden">
@@ -50,7 +51,8 @@
                     <option value="/#home">Beranda</option>
                     <option value="#profile">Profil</option>
                     <option value="#activities">Aktivitas</option>
-                    <option value="#gallery-section">Galeri</option>
+                    <option value="#gallery">Galeri</option>
+                    <option value="/blog">Blog</option>
                     <option value="#contact">Hubungi Kami</option>
                 </select>
             </nav>
@@ -128,12 +130,12 @@
             </div>
         </div>
     </section>
-    <section id="gallery-section">
+    <section id="gallery">
         <div class="container mx-auto space-y-8 p-32">
             <h1 class="text-center text-5xl font-bold text-primary">Galeri</h1>
 
-            <div id="gallery" class="relative w-full" data-carousel="slide">
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div class="relative w-full" data-carousel="slide">
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-[600px]">
                     @foreach ($galleries as $gallery)
                         <div class="hidden duration-700 ease-in-out h-full w-full" data-carousel-item>
                             <img src="{{ asset('storage/' . $gallery->path) }}"

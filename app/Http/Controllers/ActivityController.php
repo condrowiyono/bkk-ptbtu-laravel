@@ -35,12 +35,18 @@ class ActivityController extends Controller
     public function show(string $id)
     {
         $activity = Activities::find($id);
+        if (!$activity) {
+            abort(404);
+        }
         return view('activities.edit', compact('activity'));
     }
 
     public function edit(string $id)
     {
         $activity = Activities::find($id);
+        if (!$activity) {
+            abort(404);
+        }
         return view('activities.edit', compact('activity'));
     }
 
